@@ -16,7 +16,6 @@ export class AccesoGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const token = JSON.parse(this._srvStorage.get('token'));
-    console.log('TOKEN: ' + token);
     
     if (token === null) {
       this.router.navigate(['/login']);

@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this._srvEntrenador.obtenerEntrenadores().subscribe((respuesta) => {
-      console.log(respuesta);
       for (let e of respuesta['entrenadores']) {
         const entrenador = new Entrenador();
         entrenador.birth_date = e.birth_date;
@@ -34,7 +33,6 @@ export class DashboardComponent implements OnInit {
   }
 
   detalle(item: any) {
-    console.log(item);
     const dialogRef = this.dialog.open(MatBasicComponent, {
       data: {
         entrenador: item,

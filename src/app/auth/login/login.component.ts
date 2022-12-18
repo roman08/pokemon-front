@@ -41,13 +41,12 @@ export class LoginComponent implements OnInit {
     };
 
     this._srvAuth.login(email, password).subscribe((respuesta) => {
-      console.log(respuesta.status);
       if (respuesta.status === 'success') {
         this._srvStorage.set('token', respuesta['access_token']);
         this.router.navigateByUrl('/dashboard');
       } else {
         swal.fire('Alerta', respuesta.message,'error');
-        console.log(respuesta.message);
+       
       }
     });
 

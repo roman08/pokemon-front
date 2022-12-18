@@ -34,7 +34,6 @@ export class EstadisticasComponent implements OnInit {
 
   ngOnInit(): void {
     this._srvEntrenador.obtenerEntrenadores().subscribe((respuesta) => {
-      console.log(respuesta['entrenadores']);
       const entrenadores = respuesta['entrenadores'];
       this.totalEntrenadores = entrenadores.length;
       for (let e of respuesta['entrenadores']) {

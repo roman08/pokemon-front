@@ -14,9 +14,7 @@ export class MatBasicComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data: { entrenador: Entrenador }
   ) {
     this.entrenador =  data.entrenador;
-    console.log('aqui entrenador');
     
-    console.log(this.entrenador);
     
   }
 

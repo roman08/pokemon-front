@@ -21,7 +21,6 @@ export class SeleccionarPokemonsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this._srvStorage.get('idEntrenador'));
 
     // swal.fire('Registro exitoso...', 'Alerta', 'success');
     this.obtenerPokemons(150);
