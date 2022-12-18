@@ -1,0 +1,101 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<!-- <section id="wrapper" class="login-register login-sidebar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="cont-bg">
+                    <h5 class="text-white">Checkbox</h5>
+                    <div class="cont-main">
+                        <div class="cont-checkbox" *ngFor="let poke of pokemones; index as i">
+                            <input type="checkbox" [id]="'myCheckbox-' + i"  [(ngModel)]="poke.isChecked" (change)="changeSelection()" value="{{poke.name}}" [ngModelOptions]="{standalone: true}">
+                            <label [for]="'myCheckbox-' + i">
+                                <img [src]="poke.img" />
+                                <span class="cover-checkbox">
+                                    <svg viewBox="0 0 12 10">
+                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                    </svg>
+                                </span>
+                                <div class="info">{{ poke.name }}</div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="login-box card">
+                    <div class="card-body">
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+
+
+<section id="wrapper">
+    <div class="login-register" style="background-image:url(../assets/images/background/entrenador.jpg);">
+        <div class="login-box card">
+            <div class="card-body">
+        <form [formGroup]="entrenadorForm"  class="form-horizontal form-material" id="entrenadorForm" (submit)="guardarEntrenador()">
+            <a href="javascript:void(0)" class="text-center db"><img src="../assets/images/pokemon-logo.png"
+                    style="width: 150px; height: 150px; margin-bottom: 10px;" alt="Home" /><br />
+                <h5><strong>Registro</strong> Maestros Pokémon</h5>
+            </a>
+            <div class="form-group m-t-40">
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" formControlName="nombre" [ngClass]="{ 'is-invalid': nombre?.invalid && nombre?.touched }" placeholder="Nombre" >
+                    <div *ngIf="nombre?.errors" class="invalid-feedback">
+                        <div *ngIf="nombre?.errors?.['required'] && nombre?.touched">El nombre es requerido.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" formControlName="apellidos" [ngClass]="{ 'is-invalid': apellidos?.invalid && apellidos?.touched }" placeholder="Apellidos" >
+                    <div *ngIf="apellidos?.errors" class="invalid-feedback">
+                        <div *ngIf="apellidos?.errors?.['required'] && apellidos?.touched">Los apellidos son requeridos.</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input class="form-control" type="email" formControlName="correo" [ngClass]="{ 'is-invalid': correo?.invalid && correo?.touched }" placeholder="Correo" >
+                    <div *ngIf="correo?.errors" class="invalid-feedback">
+                        <div *ngIf="correo?.errors?.['required'] && correo?.touched">El correo es requerido.</div>
+                        <div *ngIf="correo?.errors?.['pattern'] && correo?.touched">Ingrese un correo valido.</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input class="form-control" type="date" formControlName="fechaNacimiento" [ngClass]="{ 'is-invalid': fechaNacimiento?.invalid && fechaNacimiento?.touched }" placeholder="Fecha  de nacimiento">
+                    <div *ngIf="fechaNacimiento?.errors" class="invalid-feedback">
+                        <div *ngIf="fechaNacimiento?.errors?.['required'] && fechaNacimiento?.touched">La contraseña es requerida.</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-group text-center m-t-20">
+                <div class="col-xs-12">
+                    <button class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit"  [disabled]="entrenadorForm.invalid">REGISTRAR</button>
+                    <a routerLink="/" class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit">CANCELAR</a>
+                </div>
+            </div>
+        
+        
+        </form>
+            </div>
+        </div>
+    </div>
+</section>
