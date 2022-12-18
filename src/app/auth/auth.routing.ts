@@ -9,7 +9,7 @@ import { SeleccionarPokemonsComponent } from './seleccionar-pokemons/seleccionar
 
 
 const routes: Routes = [
-  { path: 'register', component: RegisterComponent },
+  // { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'registrar-entrenador', component: RegistarEntrenadorComponent },

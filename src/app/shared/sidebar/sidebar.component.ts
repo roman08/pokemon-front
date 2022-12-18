@@ -24,8 +24,6 @@ export class SidebarComponent implements OnInit {
 
   logout() {
     this._srvAuth.logout().subscribe((respuesta) => {
-      console.log(respuesta);
-
       this._srvStorage.remove('token');
       this.router.navigateByUrl('/home');
     });
